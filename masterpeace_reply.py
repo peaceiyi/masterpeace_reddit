@@ -14,10 +14,10 @@ start = time.time()
 END_TIME = 300
 #works!
 reddit = praw.Reddit(client_id = "nl8ItOF-iiM1WQ",
-client_secret = "4wYkp2c_WYoLbkfKhey5xQCy5Fg",
-password = "scarytomato",
-username = "thats_a_masterpeace",
-user_agent = "masterpeace bot 1.0")
+client_secret = ,
+password = ,
+username = ,
+user_agent = )
 
 
 if not os.path.isfile("comments_replied.txt"):
