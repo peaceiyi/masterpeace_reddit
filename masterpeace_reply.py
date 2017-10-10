@@ -1,5 +1,5 @@
 #part 2
-#reddit bot that will look for "s a masterpiece" and reply with a link to my soundcloud 
+#reddit bot that will look for "s a masterpiece" and reply with a link to my soundcloud
 
 ###########SCRIPT WORKS!!!##############
 import praw
@@ -13,11 +13,11 @@ start = time.time()
 
 END_TIME = 300
 #works!
-reddit = praw.Reddit(client_id = "nl8ItOF-iiM1WQ",
-client_secret = ,
-password = ,
-username = ,
-user_agent = )
+reddit = praw.Reddit(client_id = "YOUR INFO",
+client_secret = "YOUR INFO",
+password = "YOUR INFO",
+username = "YOUR INFO",
+user_agent = "masterpeace bot 1.0")
 
 
 if not os.path.isfile("comments_replied.txt"):
@@ -27,8 +27,8 @@ else:
 		comments_replied = f.read()
 		comments_replied = comments_replied.split("\n")
 		comments_replied = list(filter(None, comments_replied))
-		
-		
+
+
 subreddit = reddit.subreddit('all')
 
 
@@ -41,28 +41,23 @@ for comment in subreddit.stream.comments():
 				pass
 			else:
 				comment.reply("A masterpiece you say? Well check this out! https://soundcloud.com/masterpeacerecords/tracks")
-				comments_replied.append(comment.id)
+				comments_replied.append(comment.id) #add comment id to list
+
+				#this is just to check where the script is, not necessary
 				print('##################################################')
 				print(comment.author, "SAID \"S A MASTERPIECE\"")
 				print("REPLYING")
 				print("##################################################")
-				
-				with open("comments_replied.txt", "w") as f:
-					f.write(comment.id + "\n")
-				time.sleep(5)
-		
-				
+
+
+
 	if time.time() > start + END_TIME:
 		break
 
 print("THE PROGRAM RAN FOR THIS LONG: ",start+END_TIME)
-				
-				
 
-
-"""	
 with open("posts_replied_to.txt", "w") as f:
 	for comment_id in comment_replied:
 		f.write(comment_id + "\n")
-"""
-        
+
+f.close()
