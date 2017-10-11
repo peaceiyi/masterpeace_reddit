@@ -8,7 +8,7 @@ import re
 import os
 import time
 
-#reddit = praw.Reddit("masterpeace_bot")  <--- DOESNT WORK
+#reddit = praw.Reddit("masterpeace")  <--- DOESNT WORK
 start = time.time()
 
 END_TIME = 300
@@ -51,10 +51,10 @@ for comment in subreddit.stream.comments():
 
 
 
-	if time.time() > start + END_TIME:
+	if time.time() > start + END_TIME: #program will run for 5 min
 		break
 
-print("THE PROGRAM RAN FOR THIS LONG: ",start+END_TIME)
+print("THE PROGRAM RAN FOR THIS LONG: ",start+END_TIME) #print length of time program ran
 
 with open("posts_replied_to.txt", "w") as f:
 	for comment_id in comment_replied:
